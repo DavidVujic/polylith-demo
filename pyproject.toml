@@ -1,0 +1,25 @@
+[project]
+name = "demo"
+version = "0.1.0"
+authors = [{ name = "Tory Clasen", email = "ToryClasen@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.116.1",
+    "pydantic>=2.11.7",
+    "sqlmodel>=0.0.24",
+    "uvicorn[standard]>=0.35.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+dev-mode-dirs = ["components", "bases", "development", "."]
+
+[dependency-groups]
+dev = ["mypy>=1.17.0", "polylith-cli>=1.31.1"]
+
+[tool.mypy]
+strict = true
+plugins = ["pydantic.mypy"]
