@@ -23,3 +23,6 @@ dev = ["mypy>=1.17.0", "polylith-cli>=1.31.1"]
 [tool.mypy]
 strict = true
 plugins = ["pydantic.mypy"]
+mypy_path = ["components", "bases"]
+namespace_packages = true
+explicit_package_bases = true
